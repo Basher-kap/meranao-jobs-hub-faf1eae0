@@ -83,15 +83,15 @@ export default function Index() {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10 animate-fade-up" style={{ animationDelay: "0.3s" }}>
-              <Link to="/jobs">
+              <Link to="/auth">
                 <Button variant="hero" size="xl">
-                  Browse Jobs
+                  Get Started
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
               </Link>
-              <Link to="/hire">
+              <Link to="/auth">
                 <Button variant="hero-outline" size="xl">
-                  Post a Job
+                  Login
                 </Button>
               </Link>
             </div>
@@ -161,7 +161,7 @@ export default function Index() {
               </h2>
               <p className="text-muted-foreground mt-2">Latest opportunities waiting for you</p>
             </div>
-            <Link to="/jobs">
+            <Link to="/auth">
               <Button variant="outline" className="gap-2">
                 View All Jobs
                 <ArrowRight className="w-4 h-4" />
@@ -194,14 +194,9 @@ export default function Index() {
               Join thousands of MSU students who have found meaningful part-time work through our platform.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
-              <Link to="/jobs">
+              <Link to="/auth">
                 <Button variant="gold" size="xl">
-                  Find Jobs Now
-                </Button>
-              </Link>
-              <Link to="/hire">
-                <Button variant="hero-outline" size="xl">
-                  Hire Students
+                  Get Started Now
                 </Button>
               </Link>
             </div>
