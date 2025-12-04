@@ -13,6 +13,11 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        display: ['Cinzel', 'serif'],
+        serif: ['Lora', 'Georgia', 'serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -57,28 +62,47 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // Custom MSU Okir colors
+        maroon: {
+          deep: "hsl(var(--maroon-deep))",
+          rich: "hsl(var(--maroon-rich))",
+          light: "hsl(var(--maroon-light))",
+        },
+        gold: {
+          bright: "hsl(var(--gold-bright))",
+          warm: "hsl(var(--gold-warm))",
+          muted: "hsl(var(--gold-muted))",
+        },
+        forest: {
+          DEFAULT: "hsl(var(--green-forest))",
+          emerald: "hsl(var(--green-emerald))",
+          sage: "hsl(var(--green-sage))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      boxShadow: {
+        'gold': 'var(--shadow-gold)',
+        'maroon': 'var(--shadow-maroon)',
+        'card': 'var(--shadow-card)',
+      },
+      backgroundImage: {
+        'gradient-maroon': 'var(--gradient-maroon)',
+        'gradient-gold': 'var(--gradient-gold)',
+        'gradient-okir': 'var(--gradient-okir)',
+        'gradient-hero': 'var(--gradient-hero)',
+      },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
         },
       },
       animation: {
