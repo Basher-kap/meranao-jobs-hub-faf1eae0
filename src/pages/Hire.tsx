@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { Plus, Briefcase, Building, MapPin, DollarSign, Clock, FileText, CheckCircle } from "lucide-react";
+import { Plus, Briefcase, Building, MapPin, DollarSign, Clock, FileText, CheckCircle, Tag } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { OkirPattern } from "@/components/decorative/OkirPattern";
 import { useToast } from "@/hooks/use-toast";
+import { JOB_CATEGORIES } from "@/data/mockJobs";
 
 export default function Hire() {
   const { toast } = useToast();
@@ -15,6 +16,8 @@ export default function Hire() {
     company: "",
     location: "",
     type: "Part-Time",
+    category: "",
+    otherCategory: "",
     salary: "",
     description: "",
     requirements: "",
@@ -42,6 +45,8 @@ export default function Hire() {
       company: "",
       location: "",
       type: "Part-Time",
+      category: "",
+      otherCategory: "",
       salary: "",
       description: "",
       requirements: "",
@@ -133,6 +138,36 @@ export default function Hire() {
                         required
                         className="h-12"
                       />
+                    </div>
+
+                    {/* Job Category */}
+                    <div>
+                      <label className="flex items-center gap-2 text-sm font-medium text-foreground mb-2">
+                        <Tag className="w-4 h-4 text-gold-warm" />
+                        Job Category *
+                      </label>
+                      <select
+                        name="category"
+                        value={formData.category}
+                        onChange={handleChange}
+                        required
+                        className="w-full h-12 px-4 rounded-lg border border-input bg-background text-foreground focus:ring-2 focus:ring-ring"
+                      >
+                        <option value="">Select a category</option>
+                        {JOB_CATEGORIES.map((cat) => (
+                          <option key={cat} value={cat}>{cat}</option>
+                        ))}
+                      </select>
+                      {formData.category === "Others" && (
+                        <Input
+                          name="otherCategory"
+                          value={formData.otherCategory}
+                          onChange={handleChange}
+                          placeholder="Please specify..."
+                          className="mt-2 h-12"
+                          required
+                        />
+                      )}
                     </div>
 
                     {/* Company & Location */}
