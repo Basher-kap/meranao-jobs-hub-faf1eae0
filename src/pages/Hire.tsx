@@ -128,14 +128,13 @@ export default function Hire() {
                     <div>
                       <label className="flex items-center gap-2 text-sm font-medium text-foreground mb-2">
                         <Briefcase className="w-4 h-4 text-gold-warm" />
-                        Job Title *
+                        Job Title
                       </label>
                       <Input
                         name="title"
                         value={formData.title}
                         onChange={handleChange}
                         placeholder="e.g., Student Research Assistant"
-                        required
                         className="h-12"
                       />
                     </div>
@@ -144,13 +143,12 @@ export default function Hire() {
                     <div>
                       <label className="flex items-center gap-2 text-sm font-medium text-foreground mb-2">
                         <Tag className="w-4 h-4 text-gold-warm" />
-                        Job Category *
+                        Job Category
                       </label>
                       <select
                         name="category"
                         value={formData.category}
                         onChange={handleChange}
-                        required
                         className="w-full h-12 px-4 rounded-lg border border-input bg-background text-foreground focus:ring-2 focus:ring-ring"
                       >
                         <option value="">Select a category</option>
@@ -165,7 +163,6 @@ export default function Hire() {
                           onChange={handleChange}
                           placeholder="Please specify..."
                           className="mt-2 h-12"
-                          required
                         />
                       )}
                     </div>
@@ -175,28 +172,26 @@ export default function Hire() {
                       <div>
                         <label className="flex items-center gap-2 text-sm font-medium text-foreground mb-2">
                           <Building className="w-4 h-4 text-gold-warm" />
-                          Company/Department *
+                          Company/Department
                         </label>
                         <Input
                           name="company"
                           value={formData.company}
                           onChange={handleChange}
                           placeholder="e.g., College of Engineering"
-                          required
                           className="h-12"
                         />
                       </div>
                       <div>
                         <label className="flex items-center gap-2 text-sm font-medium text-foreground mb-2">
                           <MapPin className="w-4 h-4 text-gold-warm" />
-                          Location *
+                          Location
                         </label>
                         <Input
                           name="location"
                           value={formData.location}
                           onChange={handleChange}
                           placeholder="e.g., Main Campus"
-                          required
                           className="h-12"
                         />
                       </div>
@@ -207,7 +202,7 @@ export default function Hire() {
                       <div>
                         <label className="flex items-center gap-2 text-sm font-medium text-foreground mb-2">
                           <Clock className="w-4 h-4 text-gold-warm" />
-                          Job Type *
+                          Job Type
                         </label>
                         <select
                           name="type"
@@ -223,14 +218,13 @@ export default function Hire() {
                       <div>
                         <label className="flex items-center gap-2 text-sm font-medium text-foreground mb-2">
                           <DollarSign className="w-4 h-4 text-gold-warm" />
-                          Salary/Rate *
+                          Salary/Rate
                         </label>
                         <Input
                           name="salary"
                           value={formData.salary}
                           onChange={handleChange}
                           placeholder="e.g., ₱100-150/hr"
-                          required
                           className="h-12"
                         />
                       </div>
@@ -240,14 +234,13 @@ export default function Hire() {
                     <div>
                       <label className="flex items-center gap-2 text-sm font-medium text-foreground mb-2">
                         <FileText className="w-4 h-4 text-gold-warm" />
-                        Job Description *
+                        Job Description
                       </label>
                       <Textarea
                         name="description"
                         value={formData.description}
                         onChange={handleChange}
                         placeholder="Describe the job responsibilities, duties, and what a typical day looks like..."
-                        required
                         rows={4}
                       />
                     </div>
@@ -269,7 +262,7 @@ export default function Hire() {
                     {/* Contact Email */}
                     <div>
                       <label className="text-sm font-medium text-foreground mb-2 block">
-                        Contact Email *
+                        Contact Email
                       </label>
                       <Input
                         type="email"
@@ -277,7 +270,6 @@ export default function Hire() {
                         value={formData.contactEmail}
                         onChange={handleChange}
                         placeholder="your.email@msu.edu.ph"
-                        required
                         className="h-12"
                       />
                     </div>

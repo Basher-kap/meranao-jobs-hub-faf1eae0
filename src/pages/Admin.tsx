@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { 
-  BarChart3, Users, Briefcase, TrendingUp, Eye, UserPlus, 
-  FileText, Calendar, ArrowUp, ArrowDown, Clock
+  BarChart3, Users, Briefcase, TrendingUp, UserPlus, 
+  FileText, Clock
 } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { StatCard } from "@/components/cards/StatCard";
+import { Button } from "@/components/ui/button";
 import { OkirPattern } from "@/components/decorative/OkirPattern";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line, PieChart, Pie, Cell } from "recharts";
 
@@ -228,7 +229,7 @@ export default function Admin() {
             <div className="lg:col-span-2 bg-card rounded-xl border border-border p-6">
               <div className="flex items-center justify-between mb-6">
                 <h3 className="font-display font-semibold text-foreground">Recent Activity</h3>
-                <button className="text-primary text-sm hover:underline">View All</button>
+                <Button variant="link" className="text-primary text-sm p-0 h-auto">View All</Button>
               </div>
               <div className="space-y-4">
                 {recentActivity.map((activity, index) => (
