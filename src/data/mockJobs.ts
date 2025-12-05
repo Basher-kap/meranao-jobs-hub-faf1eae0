@@ -1,5 +1,18 @@
 import { Job } from "@/components/cards/JobCard";
 
+export const JOB_CATEGORIES = [
+  "Student Assistant",
+  "Library Assistant",
+  "Tutoring / Academic Support",
+  "Public Working",
+  "Tech-Related",
+  "Event Staff",
+  "Creative Work",
+  "Others",
+] as const;
+
+export type JobCategory = typeof JOB_CATEGORIES[number];
+
 export const mockJobs: Job[] = [
   {
     id: "1",
