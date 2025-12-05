@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { MapPin, Clock, DollarSign, Building, Bookmark } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { useToast } from "@/hooks/use-toast";
 
 export interface Job {
   id: string;
@@ -22,6 +24,24 @@ interface JobCardProps {
 }
 
 export function JobCard({ job, className, style }: JobCardProps) {
+  const { toast } = useToast();
+  const [isBookmarked, setIsBookmarked] = useState(false);
+
+  const handleApply = () => {
+    toast({
+      title: "Application Submitted!",
+      description: `You applied for ${job.title} at ${job.company}`,
+    });
+  };
+
+  const handleBookmark = () => {
+    setIsBookmarked(!isBookmarked);
+    toast({
+      title: isBookmarked ? "Removed from saved" : "Job saved!",
+      description: isBookmarked ? "Job removed from your saved list" : "Job added to your saved list",
+    });
+  };
+
   return (
     <div
       className={cn(
@@ -92,10 +112,15 @@ export function JobCard({ job, className, style }: JobCardProps) {
       <div className="flex items-center justify-between mt-6 pt-4 border-t border-border">
         <span className="text-xs text-muted-foreground">{job.posted}</span>
         <div className="flex items-center gap-2">
-          <Button variant="ghost" size="icon" className="h-9 w-9">
-            <Bookmark className="w-4 h-4" />
+          <Button 
+            variant="ghost" 
+            size="icon" 
+            className={cn("h-9 w-9", isBookmarked && "text-gold-warm")}
+            onClick={handleBookmark}
+          >
+            <Bookmark className={cn("w-4 h-4", isBookmarked && "fill-current")} />
           </Button>
-          <Button variant="gold" size="sm">
+          <Button variant="gold" size="sm" onClick={handleApply}>
             Apply Now
           </Button>
         </div>

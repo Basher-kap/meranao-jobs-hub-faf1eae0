@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { User, Building2, Shield, Eye, EyeOff } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -152,7 +152,6 @@ export default function Auth() {
                   placeholder="Juan Dela Cruz"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  required
                   className="mt-1"
                 />
               </div>
@@ -168,7 +167,6 @@ export default function Auth() {
                   placeholder="2024-0001"
                   value={formData.idNumber}
                   onChange={(e) => setFormData({ ...formData, idNumber: e.target.value })}
-                  required
                   className="mt-1"
                 />
               </div>
@@ -181,7 +179,6 @@ export default function Auth() {
                   placeholder={selectedRole === "admin" ? "admin@msu.edu.ph" : "hr@company.com"}
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  required
                   className="mt-1"
                 />
               </div>
@@ -197,7 +194,6 @@ export default function Auth() {
                   placeholder="••••••••"
                   value={formData.password}
                   onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-                  required
                 />
                 <button
                   type="button"
@@ -219,7 +215,6 @@ export default function Auth() {
                   placeholder="••••••••"
                   value={formData.confirmPassword}
                   onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })}
-                  required
                   className="mt-1"
                 />
               </div>
@@ -264,9 +259,9 @@ export default function Auth() {
 
         {/* Back to home */}
         <p className="text-center mt-6">
-          <a href="/" className="text-gold-muted/80 hover:text-gold-bright text-sm">
+          <Link to="/" className="text-gold-muted/80 hover:text-gold-bright text-sm">
             ← Back to Home
-          </a>
+          </Link>
         </p>
       </div>
     </div>
